@@ -14,8 +14,12 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data'
+gem 'ffi'
+gem 'rails-controller-testing'
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
@@ -23,7 +27,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
