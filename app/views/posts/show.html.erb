@@ -1,1 +1,21 @@
 <h1>Post details pages</h1>
+<div class="post_details">
+  <div class="post_header">
+    <p><%= @post.title %> by <%= @post.author.name%></p>
+    <p>comment: <%= @post.comments.count %>, likes: <%= @post.likes.count %></p>
+  </div>
+  <div class="post_content">
+    <p>
+     <%= @post.text %>
+    </p>  
+  </div>
+  <div>
+    <% if @post.most_recent_comments.empty? %>
+        <p>No comment for this post</p>
+    <% else %>
+      <% @post.most_recent_comments.each do |comment| %>
+        <%= comment.author.name %>  :<%= comment.text %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
