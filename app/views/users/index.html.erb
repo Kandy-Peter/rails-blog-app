@@ -1,1 +1,15 @@
-<h1>Rails BlogApp</h1>
+<ul class="users-list">
+  <% @users.each do |user| %>
+    <li>
+      <ul>
+        <li>
+          <img src="<%= user.photo %>" alt="user_pic" />
+        </li>
+        <li>
+          <%= user.name %>
+          <p class="posts_count">Number of posts: <%= user.posts_counter || 0 %></p>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>

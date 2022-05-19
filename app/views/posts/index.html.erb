@@ -1,1 +1,35 @@
 <h1>post pages</h1>
+<div class="posts_container">
+  <div class="user_posts">
+     <img src="<%= @user.photo %>" alt="user_pic" />
+     <div>
+        <p><%= @user.name %></p>
+        <p class="posts_count">Number of posts: <%= @user.posts_counter || 0 %></p>
+     </div>
+  </div>
+  <div>
+    <% @posts.each do |post| %>
+      <% if @posts.empty? %>
+        <p>User doesn't have posts yet</p>
+      <% else %>
+        <div>
+            <h2><%= post.title %></h2>
+            <p><%= post.text %></p>
+            <ul>
+              <li>Comment: <%= post.comments.count%></li>
+              <li>Likes: <%= post.likes.count%></li>
+            </ul>
+        </div>
+        <div>
+          <% if post.most_recent_comments.empty? %>
+              <p>No comment for this post</p>
+          <% else %>
+            <% post.most_recent_comments.each do |comment| %>
+              <%= comment.author.name %>  :<%= comment.text %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
