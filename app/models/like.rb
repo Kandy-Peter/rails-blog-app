@@ -6,4 +6,5 @@ class Like < ApplicationRecord
     count = Comment.where(post_id: id).count
     post = Post.find_by_id(id: post_id)
     post.update(likes_counter: count)
+  end
 end
