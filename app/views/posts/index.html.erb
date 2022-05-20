@@ -1,12 +1,12 @@
 <div class="posts_container">
   <%= render "users/profil", user: @user %>
   <div>
-    <% @posts.each do |post| %>
-      <% if @posts.empty? %>
+    <% @user.recent_posts.each do |post| %>
+      <% if @user.recent_posts.empty? %>
         <p>User doesn't have posts yet</p>
       <% else %>
         <div class="border my_posts">
-            <h2><%= post.title %></h2>
+            <h2><%= link_to post.title, {:action => 'show', :id => post.id} %></h2>
             <p><%= post.text %></p>
             <span>
               Comment: <%= post.comments.count%>,
