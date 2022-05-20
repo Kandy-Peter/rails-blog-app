@@ -42,7 +42,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: start;
   padding: 0 1.5rem;
   position: relative;
 }
@@ -84,8 +84,8 @@ a {
   position: relative;
 }
 
-.user_posts .item span,
-.my_posts span {
+.my_posts span,
+.user_posts .item span {
   position: absolute;
   right: 10px;
   bottom: 10px;
@@ -100,7 +100,7 @@ a {
 }
 
 .my_posts {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .my_comments {
@@ -133,7 +133,7 @@ a {
 
 .post_header {
   position: relative;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
 }
 
 .aside {
