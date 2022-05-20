@@ -6,9 +6,7 @@ class Post < ApplicationRecord
   after_save :update_post_counter
 
   def update_post_counter
-    count = Post.where(author_id: id).count
-    user = User.find_by_id(id: author_id)
-    user.update(posts_counter: count)
+    author.increment!(:posts_counter)
   end
 
   def most_recent_comments

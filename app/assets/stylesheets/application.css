@@ -1,15 +1,147 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users-list .user {
+  width: 100%;
+  height: 120px;
+  margin: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.users-list img,
+.users-list .user-name {
+  border: 2px solid black;
+  height: 120px;
+  margin: 2rem;
+}
+
+.users-list img {
+  width: 120px;
+}
+
+.users-list .user-name {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.users-list .user-name h2 {
+  font-size: 32px;
+}
+
+.posts_count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* -------show/user(user:id)-------- */
+
+.user_posts,
+.posts_container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.border {
+  border: 2px solid #000;
+}
+
+.user_bio {
+  padding: 0.5rem;
+  min-height: 100px;
+  margin: 0 2rem;
+}
+
+.user_posts .item,
+.my_posts {
+  margin: 2rem;
+  padding: 1.5rem 1rem;
+  position: relative;
+}
+
+.my_posts span,
+.user_posts .item span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.user_posts button,
+.posts_container button {
+  margin: 0 auto;
+  width: 150px;
+  height: 40px;
+  background: #fff;
+}
+
+.my_posts {
+  margin-bottom: 5px;
+}
+
+.my_comments {
+  margin: 0 2rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my_comments p {
+  font-size: 16px;
+}
+
+.posts_container button {
+  margin: 20px auto;
+}
+
+/* ---------------post details/show pages------------------ */
+
+.post_details {
+  padding: 2rem;
+}
+
+.detail-container {
+  min-height: 300px;
+  padding: 1rem;
+  margin-bottom: 5px;
+}
+
+.post_header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.aside {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.comments {
+  padding: 10px;
+}

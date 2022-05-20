@@ -1,1 +1,29 @@
-<h1>post pages</h1>
+<div class="posts_container">
+  <%= render "users/profil", user: @user %>
+  <div>
+    <% @user.recent_posts.each do |post| %>
+      <% if @user.recent_posts.empty? %>
+        <p>User doesn't have posts yet</p>
+      <% else %>
+        <div class="border my_posts">
+            <h2><%= link_to post.title, {:action => 'show', :id => post.id} %></h2>
+            <p><%= post.text %></p>
+            <span>
+              Comment: <%= post.comments.count%>,
+              Likes: <%= post.likes.count%>
+            </span>
+        </div>
+        <div class="border my_comments">
+          <% if post.most_recent_comments.empty? %>
+              <p>No comment for this post</p>
+          <% else %>
+            <% post.most_recent_comments.each do |comment| %>
+              <p><%= comment.author.name %>  :<%= comment.text %></p>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <button class="border">Pagination</button>
+</div>

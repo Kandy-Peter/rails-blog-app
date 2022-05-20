@@ -1,1 +1,21 @@
-<h1>This is the users:ID page</h1>
+<div class="user_posts">
+  <%= render "profil", user: @user %>
+  <div class="user_bio border">
+    <h4>Bio: </h4>
+    <p><%= @user.bio || "no Bio provided by the user" %></p>
+  </div>
+  <div class="posts">
+    <% @post.each do |post| %>
+      <% if @post.empty? %>
+        <p>User doesn't have posts yet</p>
+      <% else %>
+        <div class="item border">
+            <h2><%= post.title %></h2>
+            <p><%= post.text %></p>
+            <span>Comment <%= post.comments.count%>, Likes <%= post.likes.count%></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <button class="border"><%= link_to 'See all posts', user_posts_path(@user) %></button>
+</div>

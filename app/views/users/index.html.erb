@@ -1,1 +1,3 @@
-<h1>Rails BlogApp</h1>
+<% @users.each do |user| %>
+  <%= render "profil", user: user %>
+<% end %>
