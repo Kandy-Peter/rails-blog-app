@@ -1,26 +1,21 @@
 <div class="user_posts">
-  <div class="user_profile">
-     <img src="<%= @user.photo %>" alt="user_pic" />
-     <div>
-        <p><%= @user.name %></p>
-        <p class="posts_count">Number of posts: <%= @user.posts_counter || 0 %></p>
-     </div>
-  </div>
-  <div class="user_bio">
+  <%= render "profil", user: @user %>
+  <div class="user_bio border">
+    <h4>Bio: </h4>
     <p><%= @user.bio || "no Bio provided by the user" %></p>
   </div>
-  <ul>
+  <div class="posts">
     <% @post.each do |post| %>
       <% if @post.empty? %>
         <p>User doesn't have posts yet</p>
       <% else %>
-        <div>
+        <div class="item border">
             <h2><%= post.title %></h2>
             <p><%= post.text %></p>
-            <h3>Comment <%= post.comments.count%>,  <span>Likes <%= post.likes.count%></span></h3>
+            <span>Comment <%= post.comments.count%>, Likes <%= post.likes.count%></span>
         </div>
       <% end %>
     <% end %>
-  </ul>
-  <button>See all posts</button>
+  </div>
+  <button class="border">See all posts</button>
 </div>

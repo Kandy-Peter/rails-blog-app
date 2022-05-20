@@ -1,35 +1,29 @@
-<h1>post pages</h1>
 <div class="posts_container">
-  <div class="user_posts">
-     <img src="<%= @user.photo %>" alt="user_pic" />
-     <div>
-        <p><%= @user.name %></p>
-        <p class="posts_count">Number of posts: <%= @user.posts_counter || 0 %></p>
-     </div>
-  </div>
+  <%= render "users/profil", user: @user %>
   <div>
     <% @posts.each do |post| %>
       <% if @posts.empty? %>
         <p>User doesn't have posts yet</p>
       <% else %>
-        <div>
+        <div class="border my_posts">
             <h2><%= post.title %></h2>
             <p><%= post.text %></p>
-            <ul>
-              <li>Comment: <%= post.comments.count%></li>
-              <li>Likes: <%= post.likes.count%></li>
-            </ul>
+            <span>
+              Comment: <%= post.comments.count%>,
+              Likes: <%= post.likes.count%>
+            </span>
         </div>
-        <div>
+        <div class="border my_comments">
           <% if post.most_recent_comments.empty? %>
               <p>No comment for this post</p>
           <% else %>
             <% post.most_recent_comments.each do |comment| %>
-              <%= comment.author.name %>  :<%= comment.text %>
+              <p><%= comment.author.name %>  :<%= comment.text %></p>
             <% end %>
           <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
+  <button class="border">Pagination</button>
 </div>
