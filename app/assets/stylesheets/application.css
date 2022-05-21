@@ -129,6 +129,7 @@ a {
   min-height: 300px;
   padding: 1rem;
   margin-bottom: 5px;
+  position: relative;
 }
 
 .post_header {
@@ -144,4 +145,26 @@ a {
 
 .comments {
   padding: 10px;
+}
+
+.comment_link {
+  padding: 0.6rem;
+  width: 150px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.like-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin-top: 1rem;
+  width: 80px;
+  padding: 6px;
+}
+
+.create-post-btn {
+  padding: 10px;
+  width: 100px;
+  margin: 1rem 2rem;
 }

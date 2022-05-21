@@ -9,6 +9,9 @@
       <%= @post.text %>
       </p>  
     </div>
+    <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
+      <%= form.submit "Like", class: "like-btn border" %>
+    <%end%>
   </div>
   <div class="comments border">
     <% if @post.most_recent_comments.empty? %>
@@ -18,5 +21,8 @@
         <p><%= comment.author.name %>  :<%= comment.text %></p>
       <% end %>
     <% end %>
+  </div>
+  <div class="border comment_link">
+    <%= link_to "Add a comment", new_user_post_comment_path(post_id: @post.id) %>
   </div>
 </div>

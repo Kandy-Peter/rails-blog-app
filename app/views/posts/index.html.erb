@@ -1,5 +1,6 @@
 <div class="posts_container">
   <%= render "users/profil", user: @user %>
+  <%= link_to "Create Post", new_user_post_path(user_id: @user.id), class: "create-post-btn border" %>
   <div>
     <% @user.recent_posts.each do |post| %>
       <% if @user.recent_posts.empty? %>
