@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   before(:each) do
     @user = User.new(name: 'Kandy', photo: 'https://microverse_student.com/img1', bio: 'software Developer form Congo')
-    @post = Post.new(author: @user, title: 'post test', text: 'content for checking tests', comments_counter: 0, likes_counter: 0)
+    @post = Post.new(author: @user, title: 'post test', text: 'content for checking tests', comments_counter: 0,
+                     likes_counter: 0)
   end
 
   before { @post.save }
@@ -14,7 +15,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'title content max 250 characters' do
-    @post.title = "title"
+    @post.title = 'title'
     expect(@post).to be_valid
   end
 

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-
   before(:each) do
     @comment = Comment.new(text: 'Good Job!', author_id: 9, post_id: 12)
   end
