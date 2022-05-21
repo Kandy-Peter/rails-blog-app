@@ -145,3 +145,10 @@ a {
 .comments {
   padding: 10px;
 }
+
+.comment_link {
+  padding: 0.6rem;
+  width: 150px;
+  text-align: center;
+  margin-top: 1rem;
+}

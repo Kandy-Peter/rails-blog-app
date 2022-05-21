@@ -9,16 +9,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new
+    @post = Post.new
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new(post_params)
+    @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to user_posts_path(params[:user_id])
     else
       render :new, status: :unprocessable_entity
     end
