@@ -8,8 +8,10 @@ class LikesController < ApplicationController
     @like = @post.likes.new(author_id: current_user.id, post_id: @post.id)
 
     if @like.save
+      flash[:notice] = 'You liked this post'
       redirect_to @post
     else
+      flash.now[:alert] = 'Error! Try again.'
       render :new, status: :unprocessable_entity
     end
   end
