@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     @like = @post.likes.new(author_id: current_user.id, post_id: @post.id)
 
     if @like.save
-      redirect_to root_path
+      redirect_to @post
     else
       render :new, status: :unprocessable_entity
     end
