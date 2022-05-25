@@ -5,10 +5,10 @@ ruby '3.1.2'
 
 gem 'bootsnap', require: false
 gem 'bullet'
+gem 'devise'
 gem 'ffi'
 gem 'importmap-rails'
 gem 'jbuilder'
-gem 'devise'
 gem 'letter_opener'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
