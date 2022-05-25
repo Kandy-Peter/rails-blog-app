@@ -168,3 +168,37 @@ a {
   width: 100px;
   margin: 1rem 2rem;
 }
+
+.form_container,
+.actions {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+}
+
+.field input {
+  background: none;
+  outline: none;
+}
+
+.input_form,
+.input_btn {
+  width: 300px;
+  height: 30px;
+  margin: 1rem;
+  padding: 7px;
+}
+
+.input_btn {
+  width: 150px;
+}
+
+.actions {
+  padding: 0;
+}
