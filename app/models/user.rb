@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def recent_posts
     Post.order(created_at: :desc).where(author: id).first(3)
   end
+
+  def admin?
+    role == 'admin'
+  end
 end
