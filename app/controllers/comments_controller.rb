@@ -17,6 +17,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+
+    if @comment.destroy
+      flash[:success] = 'You comment was added to the post'
+      @comment.update_comment_counter(@comment.post_id)
+      redirect_to user_post_path
+    else
+      flash.now[:error] = 'AN error occured, please try again'
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def comment_params
