@@ -5,6 +5,7 @@ ruby '3.1.2'
 
 gem 'bootsnap', require: false
 gem 'bullet'
+gem 'cancancan'
 gem 'devise'
 gem 'ffi'
 gem 'importmap-rails'
