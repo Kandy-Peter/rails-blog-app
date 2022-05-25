@@ -1,3 +1,8 @@
-<% @users.each do |user| %>
-  <%= render "profil", user: user %>
-<% end %>
+<div class="users_container">
+<div>
+  <h1>Welcome to my blog App</h1>
+</div>
+  <% @users.each do |user| %>
+    <%= render "profil", user: user %>
+  <% end %>
+</div>

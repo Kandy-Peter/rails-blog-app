@@ -9,7 +9,7 @@ class LikesController < ApplicationController
 
     if @like.save
       flash[:notice] = 'You liked this post'
-      redirect_to @post
+      redirect_to user_posts_path(current_user, @post)
     else
       flash.now[:alert] = 'Error! Try again.'
       render :new, status: :unprocessable_entity
