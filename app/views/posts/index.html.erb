@@ -19,7 +19,7 @@
               <p>No comment for this post</p>
           <% else %>
             <% post.most_recent_comments.each do |comment| %>
-              <p><%= comment.author.name %>  :<%= comment.text %></p>
+              <p><%= comment.user.name %>  :<%= comment.text %></p>
             <% end %>
           <% end %>
         </div>

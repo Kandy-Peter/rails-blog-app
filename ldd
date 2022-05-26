@@ -1,0 +1,29 @@
+[33me9c17d5[m[33m ([m[1;36mHEAD -> [m[1;32mauthorization[m[33m)[m HEAD@{0}: commit: Fix Comment routes bug on destroy
+[33maa165e2[m HEAD@{1}: commit: Createdestrody method for Comments
+[33m3fe6368[m HEAD@{2}: commit: Create destroy method for Post controller
+[33m426f684[m HEAD@{3}: commit: Create abolity and Add user role
+[33m22d86b3[m HEAD@{4}: commit: Install cancan and generate ability.rb
+[33m06c5363[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdev[m[33m)[m HEAD@{5}: checkout: moving from dev to authorization
+[33m06c5363[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdev[m[33m)[m HEAD@{6}: pull origin dev: Fast-forward
+[33m4a6ef6f[m HEAD@{7}: checkout: moving from add_devise to dev
+[33ma91b8e3[m[33m ([m[1;31morigin/add_devise[m[33m, [m[1;32madd_devise[m[33m)[m HEAD@{8}: commit: Add style to the Log In view
+[33m6c39941[m HEAD@{9}: commit: Change bio placeholder
+[33m3e70af7[m HEAD@{10}: commit: Delete unecessary codes
+[33m2f12a43[m HEAD@{11}: commit: Fix linters errors
+[33me76022a[m HEAD@{12}: commit: Add design to style thr form
+[33meaa3c50[m HEAD@{13}: commit: fix bug on counters
+[33m53b5e4d[m HEAD@{14}: commit: Crate user sign_up form
+[33m04472eb[m HEAD@{15}: commit: Create signup form and update ApController
+[33m2d15a45[m HEAD@{16}: checkout: moving from dev to add_devise
+[33m4a6ef6f[m HEAD@{17}: checkout: moving from devise to dev
+[33mdd663d0[m[33m ([m[1;32mdevise[m[33m)[m HEAD@{18}: Branch: renamed refs/heads/add-devise to refs/heads/devise
+[33mdd663d0[m[33m ([m[1;32mdevise[m[33m)[m HEAD@{20}: commit: Fix add Likes and Comments bugs path
+[33m4a6ef6f[m HEAD@{21}: checkout: moving from dev to add-devise
+[33m4a6ef6f[m HEAD@{22}: checkout: moving from add-forms to dev
+[33ma908fbb[m[33m ([m[1;31morigin/add-forms[m[33m, [m[1;32madd-forms[m[33m)[m HEAD@{23}: checkout: moving from dev to add-forms
+[33m4a6ef6f[m HEAD@{24}: reset: moving to HEAD
+[33m4a6ef6f[m HEAD@{25}: checkout: moving from validations to dev
+[33m1489974[m[33m ([m[1;31morigin/validations[m[33m, [m[1;32mvalidations[m[33m)[m HEAD@{26}: checkout: moving from add-forms to validations
+[33ma908fbb[m[33m ([m[1;31morigin/add-forms[m[33m, [m[1;32madd-forms[m[33m)[m HEAD@{27}: checkout: moving from controllers-rspec to add-forms
+[33m70559ab[m[33m ([m[1;31morigin/controllers-rspec[m[33m, [m[1;32mcontrollers-rspec[m[33m)[m HEAD@{28}: checkout: moving from dev to controllers-rspec
+[33m4a6ef6f[m HEAD@{29}: clone: from https://github.com/Kandy-Peter/rails-blog-app.git
