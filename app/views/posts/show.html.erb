@@ -1,7 +1,7 @@
 <div class="post_details">
   <div class="detail-container border">
     <div class="post_header">
-      <p><%= @post.title %> by <%= @post.author.name%></p>
+      <p><%= @post.title %> by <%= @post.user.name%></p>
       <p class="aside">comment: <%= @post.comments.count %>, likes: <%= @post.likes.count %></p>
     </div>
     <div class="post_content">
@@ -18,11 +18,17 @@
         <p>No comment for this post</p>
     <% else %>
       <% @post.most_recent_comments.each do |comment| %>
-        <p><%= comment.author.name %>  :<%= comment.text %></p>
+        <p><%= comment.user.name %>  :<%= comment.text %></p>
+        <% if can? :destroy, comment %>
+          <%= button_to "Delete", user_post_comment_path(@post.user, @post, comment), method: :delete %>
+        <% end %>
       <% end %>
     <% end %>
   </div>
   <div class="border comment_link">
     <%= link_to "Add a comment", new_user_post_comment_path(post_id: @post.id) %>
   </div>
+  <% if can? :destroy, @post %>
+    <%= button_to "Delete Post", root_path(@post.id), method: :delete %>
+  <% end %>
 </div>
