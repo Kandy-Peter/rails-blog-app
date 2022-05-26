@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
 
     if @post.destroy
       @post.update_post_counter(@post.user_id)

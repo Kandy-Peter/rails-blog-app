@@ -12,6 +12,9 @@
     <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
       <%= form.submit "Like", class: "like-btn border" %>
     <%end%>
+    <% if can? :destroy, @post %>
+      <%= button_to "Delete Post", root_path(@post.id), method: :delete %>
+    <% end %>
   </div>
   <div class="comments border">
     <% if @post.most_recent_comments.empty? %>
@@ -28,7 +31,4 @@
   <div class="border comment_link">
     <%= link_to "Add a comment", new_user_post_comment_path(post_id: @post.id) %>
   </div>
-  <% if can? :destroy, @post %>
-    <%= button_to "Delete Post", root_path(@post.id), method: :delete %>
-  <% end %>
 </div>
