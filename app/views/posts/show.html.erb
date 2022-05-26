@@ -13,7 +13,7 @@
       <%= form.submit "Like", class: "like-btn border" %>
     <%end%>
     <% if can? :destroy, @post %>
-      <%= button_to "Delete Post", root_path(@post.id), method: :delete %>
+      <%= button_to "Delete Post", root_path(@post.id), method: :delete, class:"border" %>
     <% end %>
   </div>
   <div class="comments border">
