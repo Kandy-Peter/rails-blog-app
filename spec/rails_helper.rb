@@ -13,17 +13,18 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+Capybara.register_driver :selenium_chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
 RSpec.configure do |config|
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
   config.use_transactional_fixtures = false
-
-  # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-
-  # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
+
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
@@ -46,3 +47,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+Capybara.default_driver = :selenium_chrome
