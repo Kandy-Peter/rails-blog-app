@@ -11,7 +11,7 @@ RSpec.feature 'Login_view', type: :feature do
   context 'Submitting form' do
     scenario 'If the form submitted is empty' do
       click_button 'Log in'
-      expect(page).to have_content 'Invalid email or password.'
+      expect(page).to have_content 'Invalid Email or password.'
     end
 
     scenario 'Submitting form with the incorrect email and password' do
