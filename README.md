@@ -62,6 +62,12 @@ Open [http://localhost:3000/](http://localhost:3000/) in your browser
 - LinkedIn: [Kandi-Kamuntu](https://www.linkedin.com/in/kandi-peter-a49590212/)
 - twitter: [Kandi_Peter](https://twitter.com/peter_kandy)
 
+👤 **Trésor Sawasawa**
+
+- GitHub: [@tresorsawasawa](https://github.com/tresorsawasawa)
+- Twitter: [@tresorsawasawa](https://twitter.com/TresorSawasawa)
+- LinkedIn: [Trésor Sawasawa](https://www.linkedin.com/in/tresor-sawasawa/)
+- 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
