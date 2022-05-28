@@ -1,40 +1,45 @@
 require 'rails_helper'
-RSpec.describe 'user_index_path', type: :feature do
-  describe 'User_index_view' do
-    before(:each) do
-      @first_user = User.create(name: 'Jond_Doe', photo: 'url', bio: 'Developer from Ghana',
-                                posts_counter: 0, email: 'jond_doe@mail.com',
-                                password: 'password', password_confirmation: 'password')
-      @second_user = User.create(name: 'John', photo: 'url', bio: 'Designer from Ghana',
-                                 posts_counter: 2, email: 'john@mail.com',
-                                 password: 'password', password_confirmation: 'password')
-      @third_user = User.create(name: 'Marcus', photo: 'url', bio: 'Developer from Ghana',
-                                posts_counter: 4, email: 'marcus@mail.com',
-                                password: 'password', password_confirmation: 'password')
-      visit('users/sign_in')
-      fill_in 'Email', with: 'jond_doe@mail.com'
-      fill_in 'Password', with: 'password'
-      click_button 'Log in'
-      click_link 'All Users'
+
+RSpec.feature 'Test user_index_path', type: :feature do
+  before(:each) do
+    @first_user = User.create(name: 'kandy', photo: 'profile_photo.png',
+                              bio: 'Teacher from Mexico.', email: 'kandy@gmail.com',
+                              password: '123456', posts_counter: 0, role: 'admin')
+
+    @second_user = User.create(name: 'James', photo: 'profile_photo.png',
+                              bio: 'Teacher from Mexico.', email: 'james@gmail.com',
+                              password: '123456', posts_counter: 0, role: 'admin')
+
+    Post.create(title: 'I am sofwatre developer', text: 'Here is my first article',
+                user_id: @first_user.id, created_at: Time.now, updated_at: Time.now)
+
+    visit user_session_path
+
+    within 'form' do
+      fill_in 'Email', with: @first_user.email
+      fill_in 'Password', with: @first_user.password
     end
-    it 'displays all users' do
-      expect(page).to have_content('Jond_Doe')
-      expect(page).to have_content('John')
-      expect(page).to have_content('Marcus')
-    end
-    it 'display user profile picture' do
-      all('img').each do |i|
-        expect(i[:src]).to eq('url')
-      end
-    end
-    it "display user's number of posts" do
-      expect(page).to have_content(0)
-      expect(page).to have_content(2)
-      expect(page).to have_content(4)
-    end
-    it "redirects to user's show page" do
-      click_link 'Jond_Doe'
-      expect(page).to have_content('Jond_Doe')
-    end
+
+    click_button 'Log in'
+  end
+
+  background { visit root_path }
+  scenario 'Check all users name on render' do
+    expect(page).to have_content('kandy')
+    expect(page).to have_content('James')
+  end
+
+  scenario "Check the first user's picture" do
+    expect(page.first('img')['src']).to have_content 'profile_photo.png'
+  end
+
+  scenario "Check user's number of posts" do
+    expect(page).to have_content('Number of posts: 1')
+    expect(page).to have_content('Number of posts: 0')
+  end
+
+  scenario "On click on the user name, it redirect to the show path" do
+    click_link 'kandy', match: :first
+    expect(current_path).to eq user_path(User.first.id)
   end
 end
