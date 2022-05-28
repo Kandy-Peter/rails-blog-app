@@ -7,8 +7,8 @@ RSpec.feature 'Test user_index_path', type: :feature do
                               password: '123456', posts_counter: 0, role: 'admin')
 
     @second_user = User.create(name: 'James', photo: 'profile_photo.png',
-                              bio: 'Teacher from Mexico.', email: 'james@gmail.com',
-                              password: '123456', posts_counter: 0, role: 'admin')
+                               bio: 'Teacher from Mexico.', email: 'james@gmail.com',
+                               password: '123456', posts_counter: 0, role: 'admin')
 
     Post.create(title: 'I am sofwatre developer', text: 'Here is my first article',
                 user_id: @first_user.id, created_at: Time.now, updated_at: Time.now)
@@ -38,7 +38,7 @@ RSpec.feature 'Test user_index_path', type: :feature do
     expect(page).to have_content('Number of posts: 0')
   end
 
-  scenario "On click on the user name, it redirect to the show path" do
+  scenario 'On click on the user name, it redirect to the show path' do
     click_link 'kandy', match: :first
     expect(current_path).to eq user_path(User.first.id)
   end
