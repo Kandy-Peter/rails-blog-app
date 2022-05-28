@@ -6,13 +6,13 @@ RSpec.describe 'user_index_path', type: :feature do
                                 posts_counter: 0, email: 'jond_doe@mail.com',
                                 password: 'password', password_confirmation: 'password')
       @second_user = User.create(name: 'John', photo: 'url', bio: 'Designer from Ghana',
-                                posts_counter: 2, email: 'john@mail.com',
-                                password: 'password', password_confirmation: 'password')
-      @third_user = User.create(name: 'Marcus', photo: 'url', bio: 'Developer from Ghana',
-                                 posts_counter: 4, email: 'marcus@mail.com',
+                                 posts_counter: 2, email: 'john@mail.com',
                                  password: 'password', password_confirmation: 'password')
+      @third_user = User.create(name: 'Marcus', photo: 'url', bio: 'Developer from Ghana',
+                                posts_counter: 4, email: 'marcus@mail.com',
+                                password: 'password', password_confirmation: 'password')
       visit('users/sign_in')
-      fill_in 'Email', with: 'Jond_Doe@mail.com'
+      fill_in 'Email', with: 'jond_doe@mail.com'
       fill_in 'Password', with: 'password'
       click_button 'Log in'
       click_link 'All Users'
