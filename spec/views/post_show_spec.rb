@@ -13,9 +13,9 @@ RSpec.describe 'post_show_route', type: :feature do
 
       @post = Post.create(title: 'First Post', text: 'This is the first post', comments_counter: 3, likes_counter: 0,
                           user: @first_user)
-      @posta = Post.create(title: 'Second Post', text: 'This is the second post', comments_counter: 0,
-                           likes_counter: 0, user: first_user)
-      @postb = Post.create(title: 'Third Post', text: 'This is the third post', comments_counter: 0, likes_counter: 0,
+      @post_1 = Post.create(title: 'Second Post', text: 'This is the second post', comments_counter: 0,
+                           likes_counter: 0, user: @first_user)
+      @post_2 = Post.create(title: 'Third Post', text: 'This is the third post', comments_counter: 0, likes_counter: 0,
                            user: @first_user)
 
       @first_comment = Comment.create(text: 'My first comment', user: User.first, post: Post.first)
